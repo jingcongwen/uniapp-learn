@@ -1,0 +1,1 @@
+<view class="content">123<view class="text-area"><block qq:for="{{list}}" qq:for-item="item" qq:for-index="index" qq:key="index"><view>{{''+item+''}}</view></block></view></view>

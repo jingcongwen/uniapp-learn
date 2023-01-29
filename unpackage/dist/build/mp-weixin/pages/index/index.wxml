@@ -1,0 +1,1 @@
+<view class="content"><view class="text-area"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="*this"><view value="{{list}}" data-event-opts="{{[['input',[['__set_model',['','list','$event',[]]]]]]}}" bindinput="__e">{{''+item+''}}</view></block></view></view>
