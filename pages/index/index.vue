@@ -1,10 +1,10 @@
 <template>
 	<view class="">
+		<requestloading></requestloading>
 		<view class="time">
-			今天是{{time}}
+			历史上的{{time}}
 		</view>
 		<view class="content">
-
 			<view class="text-area">
 				<view class="item" v-model="list" v-for="(item,index) in list" :key="item">
 					{{item}}
@@ -27,23 +27,24 @@
 		},
 		mounted() {
 			var _this = this;
-			let yy = new Date().getFullYear();
+			// let yy = new Date().getFullYear();
 			let mm = new Date().getMonth() + 1;
 			let dd = new Date().getDate();
 			// let hh = new Date().getHours();
 			// let mf = new Date().getMinutes() < 10 ? '0' + new Date().getMinutes() : new Date().getMinutes();
 			// let ss = new Date().getSeconds() < 10 ? '0' + new Date().getSeconds() : new Date().getSeconds();
-			_this.time = yy + '年' + mm + '月' + dd + '日'
-			console.log(this.gettime)
+			_this.time = mm + '月' + dd + '日'
+
 		},
 
 
 		methods: {
-			async get() {
-				await uni.request({
+			get() {
+				uni.request({
 					url: 'https://zj.v.api.aa1.cn/api/bk/?num=5&type=json',
 					method: 'GET',
 					success: res => {
+						this.$hideLoading()
 						this.list = res.data.content
 					}
 

@@ -5,9 +5,11 @@
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "历史脚步",
+    "navigationBarTitleText": "过去的昨天",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {}
+  "usingComponents": {
+    "requestloading": "/components/donghua/index"
+  }
 }
